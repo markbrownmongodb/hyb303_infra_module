@@ -9,12 +9,12 @@
                 console.log(appIdHacking);
                 $.get( "https://us-east-1.aws.data.mongodb-api.com/app/"+appIdHacking+"/endpoint/whichMEC", function( data ) {
                     console.log(data);
-                    $( "#heading" ).html( "Sending you to <a href='http://"+data+":32001'>" +data+ "</a>..." );
+                    $( "#heading" ).html( "Sending you to " +data+ "..." );
                     window.location.protocol = "http:";
-                    window.location = "http://"+data.replace('"','')+":32001";
+                    // window.location = "http://"+data.replace('"','')+":32001";
                     // console.log(window.location);
-                    window.close();
-                    window.open("http://"+data.replace('"','')+":32001", '_blank');
+                    // window.close();
+                    window.open("http://"+data.replace('"','')+":32001", '_self');
                 });
             });
         </script>
